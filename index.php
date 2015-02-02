@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 
 			<div id="content">
+				<div class="intro-panel">
+					<div class="wrap center">
+						<p>
+							<?php get_custom_text('Homepage Splash Text') ?>
+						</p>
+					</div>
+				</div>
 
 				<div id="inner-content" class="wrap cf">
 

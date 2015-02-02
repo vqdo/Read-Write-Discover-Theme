@@ -41,6 +41,7 @@ the whole project.
 // the grid
 @import "partials/grid";
 
+
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -104,6 +105,8 @@ you can add resource intensive styles.
 
 	// styles in 1030up.scss
 	@import "breakpoints/1030up";
+
+	@import "animations";
 
 } // end of media query
 

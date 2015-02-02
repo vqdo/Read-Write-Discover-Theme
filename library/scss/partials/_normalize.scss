@@ -489,6 +489,12 @@ table {
     &:before, &:after { content: ""; display: table; }
     &:after { clear: both; }
 }
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
 
 /*
 use the best ampersand

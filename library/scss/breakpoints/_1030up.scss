@@ -12,3 +12,16 @@ be seen on the Desktop.
 .wrap {
   width: 1040px;
 }
+.wrap.center {
+    margin: auto;
+}
+
+.intro-panel {
+    background: url('../images/rts-boy.jpg') no-repeat 50% #F3ECDC;
+    height: 480px;
+    width: 100%;
+}
+.intro-panel p {
+    margin: 0;
+    padding: 130px 0 0 520px;
+}

@@ -1,0 +1,8 @@
+/* line 2, ../scss/animations.scss */
+nav a {
+  -webkit-transition: background 300ms, color 300ms;
+  /* property duration timing-function delay */
+  -moz-transition: background 300ms, color 300ms;
+  -o-transition: background 300ms, color 300ms;
+  transition: background 300ms, color 300ms;
+}

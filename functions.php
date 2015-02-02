@@ -58,6 +58,10 @@ function bones_ahoy() {
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'bones_excerpt_more' );
 
+  // Create generic post templates for the dynamic content area
+  add_action( 'init', 'create_dynamic_content_posts');
+
+
 } /* end bones ahoy */
 
 // let's get this party started
@@ -239,7 +243,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Passion+One');
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
@@ -250,5 +254,49 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
 		'search-form',
 		'comment-form'
 	) );
+
+function create_dynamic_content_posts() {
+  function create_dynamic_content_post($title, $content, $category = '') {
+    $args = array(
+      'post_type' => 'dynamic_content',
+      'title' => $title
+    );
+
+    $existing_posts = new WP_Query($args);
+    
+    // If this post doesn't exist, create it.
+    if(!$existing_posts->have_posts()) {
+      $post = array(
+        'post_content'   => $content,
+        'post_name'      => $title,
+        'post_title'     => $title,
+        'post_status'    => 'private',
+        'post_type'      => 'dynamic_content',
+        'ping_status'    => 'closed', 
+        'comment_status' => 'closed', // Default is the option 'default_comment_status', or 'closed'.
+        'post_category'  => $category
+      );  
+
+      wp_insert_post($post, true);
+    }
+
+  }
+  create_dynamic_content_post('Homepage Splash Text', "This is an example. Fill it out on your Dashboard.", 'homepage');
+}
+
+function get_custom_text($name) {
+  $args = array(
+    'post_type' => 'dynamic_content', 
+    'title' => $name
+  );
+
+  $post = new WP_Query($args);
+  if($post->have_posts()) {
+    return $post->the_post().the_content();
+  } else {
+    return "Text couldn't be found. Contact the web admin.";
+  }
+}
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
