@@ -9,3 +9,6 @@ on larger screens.
 
 ******************************************************************/
 
+.wrap {
+    @include container($max-page-size);
+}

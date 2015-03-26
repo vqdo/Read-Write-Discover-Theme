@@ -39,6 +39,10 @@ box-shadow: 0 0 4px rgba(0,0,0,0.3);
     @return rgba(255,255,255,$opacity);
 }
 
+@function unit($factor) {
+    @return 10px * $factor;
+}
+
 
 /*********************
 RESPONSIVE HELPER FUNCTION
@@ -63,4 +67,12 @@ width: 65%;
 }
 @function cp($target, $container) {
   @return calc-percent($target, $container);
+}
+
+/**** Fonts ****/
+@function displayFont($size) {
+    @return $headline-weight $size $fonts-headline;
+}
+@function paragraphFont($size : 1em) {
+    @return $paragraph-weight $size $fonts-headline;
 }

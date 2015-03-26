@@ -256,10 +256,15 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
 	) );
 
 function create_dynamic_content_posts() {
-  function create_dynamic_content_post($title, $content, $category = '') {
+  function create_dynamic_content_post($custom_id, $title = 'No Title', $content, $category = '') {
     $args = array(
       'post_type' => 'dynamic_content',
-      'title' => $title
+      'meta_query' => array(
+        array(
+          'key' => '_post_type',
+          'value' => $custom_id
+        )
+      )
     );
 
     $existing_posts = new WP_Query($args);
@@ -270,32 +275,58 @@ function create_dynamic_content_posts() {
         'post_content'   => $content,
         'post_name'      => $title,
         'post_title'     => $title,
-        'post_status'    => 'private',
+        'post_status'    => 'publish',
         'post_type'      => 'dynamic_content',
         'ping_status'    => 'closed', 
         'comment_status' => 'closed', // Default is the option 'default_comment_status', or 'closed'.
         'post_category'  => $category
       );  
 
-      wp_insert_post($post, true);
+      $post_id = wp_insert_post($post, true);
+      add_post_meta($post_id, "_post_type", $custom_id, true);
     }
 
   }
-  create_dynamic_content_post('Homepage Splash Text', "This is an example. Fill it out on your Dashboard.", 'homepage');
+  create_dynamic_content_post('homepage_splash', 'HomepageSplash', "This is an example. Fill it out on your Dashboard.", 'homepage');
+  create_dynamic_content_post('homepage_about', 'About', "About this page", 'homepage');  
 }
 
 function get_custom_text($name) {
   $args = array(
     'post_type' => 'dynamic_content', 
-    'title' => $name
+    'meta_query' => array(
+      array(
+        'key' => '_post_type',
+        'value' => $name
+      )
+    )
   );
 
   $post = new WP_Query($args);
   if($post->have_posts()) {
-    return $post->the_post().the_content();
+    return $post->the_post();
   } else {
     return "Text couldn't be found. Contact the web admin.";
   }
+}
+
+function get_announcements($max = 3) {
+
+  $category_id = get_cat_ID('announcements');
+
+  $args = array(
+    //'post_type' => 'content',
+    'cat' => $category_id,
+    'posts_per_page' => $max,
+    'date_query' => array(
+      'after' => "6 months ago"
+    )
+  );
+
+  $posts = new WP_Query($args);
+
+  return $posts;
+
 }
 
 

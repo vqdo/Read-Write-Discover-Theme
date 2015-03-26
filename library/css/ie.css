@@ -34,6 +34,7 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/*** Breakpoints */
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -268,30 +269,106 @@ LAYOUT & GRID STYLES
 *********************/
 /* line 26, ../scss/breakpoints/_768up.scss */
 .wrap {
-  width: 760px;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../var/lib/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.wrap:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 29, ../scss/breakpoints/_768up.scss */
+.intro-panel {
+  background: #F3ECDC;
+}
+/* line 31, ../scss/breakpoints/_768up.scss */
+.intro-panel .main-image {
+  background: url("../images/rts-boy.png") no-repeat 50%;
+  background-size: contain;
+  height: 340px;
+  width: 100%;
 }
 
 /*********************
 HEADER STYLES
 *********************/
+/* line 47, ../scss/breakpoints/_768up.scss */
+.header #inner-header {
+  background: #fff;
+  border-radius: 0 0 "" "";
+  box-shadow: 0 0 "" black(0.1);
+  padding: 0 "";
+  position: relative;
+}
+
+/* line 57, ../scss/breakpoints/_768up.scss */
+#logo img {
+  opacity: 0.7;
+}
+/* line 61, ../scss/breakpoints/_768up.scss */
+#logo:hover img {
+  opacity: 1;
+}
+/* line 64, ../scss/breakpoints/_768up.scss */
+#logo:hover a {
+  color: #BA191F;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 42, ../scss/breakpoints/_768up.scss */
+/* line 74, ../scss/breakpoints/_768up.scss */
 .nav {
   border: 0;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 44, ../scss/breakpoints/_768up.scss */
+/* line 79, ../scss/breakpoints/_768up.scss */
+.nav.top-nav a {
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.2em 0.25em;
+  text-transform: uppercase;
+}
+/* line 84, ../scss/breakpoints/_768up.scss */
+.nav.top-nav a:hover, .nav.top-nav a:focus {
+  border-bottom: "" solid #F3ECDC;
+  color: #D5A670;
+}
+/* line 90, ../scss/breakpoints/_768up.scss */
+.nav.sub-nav {
+  background: #6E6A64;
+  padding: "" 0;
+  width: 100%;
+}
+/* line 94, ../scss/breakpoints/_768up.scss */
+.nav.sub-nav li {
+  float: right;
+}
+/* line 97, ../scss/breakpoints/_768up.scss */
+.nav.sub-nav a {
+  color: #F3ECDC;
+  font: paragraphFont(0.8em);
+  padding: 1em 0.75em;
+  text-align: right;
+  text-transform: uppercase;
+}
+/* line 104, ../scss/breakpoints/_768up.scss */
+.nav.sub-nav a:hover {
+  background: #2980b9;
+  color: #fff;
+}
+/* line 110, ../scss/breakpoints/_768up.scss */
 .nav ul {
   background: #323944;
   margin-top: 0;
 }
-/* line 48, ../scss/breakpoints/_768up.scss */
+/* line 114, ../scss/breakpoints/_768up.scss */
 .nav li {
-  border-right: 1px solid #CCC;
   float: left;
   position: relative;
   /*
@@ -299,26 +376,15 @@ NAVIGATION STYLES
   */
   /* showing sub-menus */
 }
-/* line 53, ../scss/breakpoints/_768up.scss */
+/* line 118, ../scss/breakpoints/_768up.scss */
 .nav li a {
   border-bottom: 0;
-  font: normal 2em "Passion One", "Coming Soon", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 1em 0.75em;
   /*
   you can use hover styles here even though this size
   has the possibility of being a mobile device.
   */
 }
-/* line 62, ../scss/breakpoints/_768up.scss */
-.nav li a:hover, .nav li a:focus {
-  background: #6E9C30;
-  color: #fff;
-}
-/* line 68, ../scss/breakpoints/_768up.scss */
-.nav li:first-child {
-  border-left: 1px solid #CCC;
-}
-/* line 76, ../scss/breakpoints/_768up.scss */
+/* line 138, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu,
 .nav li ul.children {
   margin-top: 0;
@@ -329,7 +395,7 @@ NAVIGATION STYLES
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-/* line 85, ../scss/breakpoints/_768up.scss */
+/* line 147, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
   /*
@@ -338,7 +404,7 @@ NAVIGATION STYLES
   for usability. k, bai.
   */
 }
-/* line 87, ../scss/breakpoints/_768up.scss */
+/* line 149, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 10px;
@@ -347,18 +413,18 @@ NAVIGATION STYLES
   width: 180px;
   border-bottom: 1px solid #ccc;
 }
-/* line 104, ../scss/breakpoints/_768up.scss */
+/* line 166, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
-/* line 114, ../scss/breakpoints/_768up.scss */
+/* line 176, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li ul,
 .nav li ul.children li ul {
   top: 0;
   left: 100%;
 }
-/* line 129, ../scss/breakpoints/_768up.scss */
+/* line 191, ../scss/breakpoints/_768up.scss */
 .nav li:hover > ul {
   top: auto;
   visibility: visible;
@@ -368,28 +434,28 @@ NAVIGATION STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 149, ../scss/breakpoints/_768up.scss */
+/* line 211, ../scss/breakpoints/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
 
-/* line 153, ../scss/breakpoints/_768up.scss */
+/* line 215, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 158, ../scss/breakpoints/_768up.scss */
+/* line 220, ../scss/breakpoints/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
-/* line 163, ../scss/breakpoints/_768up.scss */
+/* line 225, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 171, ../scss/breakpoints/_768up.scss */
+/* line 233, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -407,6 +473,33 @@ SIDEBARS & ASIDES
 /* search widget */
 /* text widget */
 /*********************
+NEWS CONTAINER
+*********************/
+/* line 334, ../scss/breakpoints/_768up.scss */
+#news-content .wrap {
+  background: #fff;
+}
+/* line 337, ../scss/breakpoints/_768up.scss */
+#news-content #main-news {
+  background: #F3ECDC;
+  padding: 0 0 "" "";
+  position: relative;
+  top: -160px;
+}
+/* line 342, ../scss/breakpoints/_768up.scss */
+#news-content #main-news h2 {
+  font-size: 2em;
+  margin: 0;
+}
+/* line 346, ../scss/breakpoints/_768up.scss */
+#news-content #main-news .inner {
+  background: #fff;
+  padding: "" "";
+  min-height: "";
+  font-size: 1em;
+}
+
+/*********************
 FOOTER STYLES
 *********************/
 /*
@@ -414,7 +507,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 279, ../scss/breakpoints/_768up.scss */
+/* line 367, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -436,25 +529,34 @@ be seen on the Desktop.
 ******************************************************************/
 /* line 12, ../scss/breakpoints/_1030up.scss */
 .wrap {
-  width: 1040px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../var/lib/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.wrap:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
-/* line 15, ../scss/breakpoints/_1030up.scss */
-.wrap.center {
-  margin: auto;
-}
-
-/* line 19, ../scss/breakpoints/_1030up.scss */
-.intro-panel {
-  background: url("../images/rts-boy.jpg") no-repeat 50% #F3ECDC;
+/* line 17, ../scss/breakpoints/_1030up.scss */
+.intro-panel .main-image {
   height: 480px;
-  width: 100%;
 }
 
-/* line 24, ../scss/breakpoints/_1030up.scss */
+/* line 22, ../scss/breakpoints/_1030up.scss */
 .intro-panel p {
   margin: 0;
   padding: 130px 0 0 520px;
+}
+
+/*********************
+NEWS CONTAINER
+*********************/
+/* line 32, ../scss/breakpoints/_1030up.scss */
+#news-content #main-news {
+  top: -220px;
 }
 
 /*

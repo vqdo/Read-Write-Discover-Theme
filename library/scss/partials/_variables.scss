@@ -25,14 +25,25 @@ $alert-blue:        #d5edf8;
 $black:             #323944;
 $white:             #fff;
 
+$red:               #BA191F;
+
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-$text-color:        #5c6b80;
 $meta-gray:         #9fa6b4;
+$dark-gray:         #333333;
+$med-gray:          #6E6A64;
 
-$tan:               #eceee5;
+$text-color:        $dark-gray;
 
-$green:             #6E9C30;
+$blue:              #1E86D0;
+$light-blue:        #8DDBDF;
+$light-yellow:      #FFE665;
+
+$tan:               #F3ECDC;
+$tan-med:           #a59e93;
+$tan-dark:          #D5A670;
+
+$green:             #7fa54a;
 
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
@@ -43,6 +54,13 @@ $link-hover:        darken($link-color, 9%);
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 
+/*** Breakpoints */
+$max-page-size:     1240px;
+
+$headline-weight:   700;
+$paragraph-weight:  600;
+$fonts-headline:    "ff-enzo-web", Helvetica, Arial, sans-serif;
+$fonts-paragraph:   "ff-enzo-web", Helvetica, Arial, sans-serif;
 
 /*
 Here's a great tutorial on how to

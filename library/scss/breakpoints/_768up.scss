@@ -12,7 +12,7 @@ come into play. Have fun!
 
 ******************************************************************/
 
-
+@import "susy";
 /*********************
 GENERAL STYLES
 *********************/
@@ -24,16 +24,48 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	@include container(768px);
+}
+.intro-panel {
+	background: $tan;
+	.main-image {
+	    background: url('../images/rts-boy.png') no-repeat 50%;
+	 	background-size: contain;
+	    //box-shadow: inset 0 0 unit(5) black(0.15);
+	        //TODO: vendor prefix
+	    height: 340px;
+	    width: 100%;
+	}
+
 }
 
 /*********************
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	#inner-header {
+		background: $white;
+		border-radius: 0 0 unit(1) unit(1);
+		box-shadow: 0 0 unit(1) black(0.1);
+		padding: 0 unit(2);
+		position: relative;
+	}
 
-	#logo {}
+}
+#logo {
+	img {
+		opacity: 0.7;
+	}
+	&:hover {
+		img {
+			opacity: 1;
+		}
+		a {
+			color: $red;
+		}
+	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -41,32 +73,62 @@ NAVIGATION STYLES
 
 .nav {
 	border: 0;
+
+	&.top-nav {
+
+		a {
+			font-weight: $headline-weight;
+			letter-spacing: 1px;			
+			padding: 0.2em 0.25em;
+			text-transform: uppercase;
+			&:hover, &:focus {
+				border-bottom: unit(0.5) solid $tan;
+				color: $tan-dark;
+			}
+		}
+	}
+	&.sub-nav {
+		background: $med-gray;
+		padding: unit(0.3) 0;
+		width: 100%;
+		li {
+			float: right;
+		}
+		a {
+			color: $tan;
+			font: paragraphFont(0.8em);
+			padding: 1em 0.75em;
+			text-align: right;			
+			text-transform: uppercase;
+
+			&:hover {
+				background: $blue;
+				color: $white;
+			}
+		}
+	}
 	ul {
-		background:$black;
+		background: $black;
 		margin-top:0;
 	}
 	li {
-		border-right: 1px solid #CCC;
 		float: left;
 		position: relative;
 
 		a {
 			border-bottom: 0;
-			font: normal 2em $handwriting;
-			padding: 1em 0.75em;
 
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background: $green;
-				color: $white;
+
 			}
 		}
 
 		&:first-child {
-			border-left: 1px solid #CCC;
+			
 		}
 		&:last-child {}
 
@@ -264,6 +326,32 @@ SIDEBARS & ASIDES
 	.widget_text {}
 	.textwidget p {}
 
+/*********************
+NEWS CONTAINER
+*********************/
+
+#news-content {
+	.wrap {
+		background: $white;
+	}
+	#main-news {
+		background: $tan;
+		padding: 0 0 unit(2) unit(2);
+		position: relative;
+			top: -160px;	
+		h2 {
+			font-size: 2em;
+			margin: 0;
+		}			
+		.inner {
+			background: $white;
+			//box-shadow: inset 0 0 unit(2) black(0.1);
+			padding: unit(1) unit(2);
+			min-height: unit(30);
+			font-size: 1em;
+		}
+	}
+}
 
 /*********************
 FOOTER STYLES

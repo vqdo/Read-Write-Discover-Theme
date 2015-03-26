@@ -4,5 +4,10 @@ nav a {
   /* property duration timing-function delay */
   -moz-transition: background 300ms, color 300ms;
   -o-transition: background 300ms, color 300ms;
-  transition: background 300ms, color 300ms;
+  transition: border 300ms, background 300ms, color 300ms;
+}
+
+/* line 11, ../scss/animations.scss */
+#logo img {
+  transition: opacity linear 0.3s;
 }

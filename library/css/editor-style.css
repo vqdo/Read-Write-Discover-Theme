@@ -205,6 +205,7 @@ body#tinymce.wp-editor {
   Need help w/ choosing your colors? Try this site out:
   http://0to255.com/
   *********************/
+  /*** Breakpoints */
   /*
   Here's a great tutorial on how to
   use color variables properly:
@@ -301,6 +302,7 @@ body#tinymce.wp-editor {
   both compile to:
   width: 65%;
   *********************/
+  /**** Fonts ****/
   /******************************************************************
   Site Name:
   Author:
@@ -347,7 +349,7 @@ body#tinymce.wp-editor {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
+  color: #333333;
   -webkit-font-smoothing: antialiased;
   /*********************
 	LINK STYLES
@@ -687,13 +689,13 @@ body#tinymce.wp-editor p {
 }
 /* line 45, ../scss/editor-style.scss */
 body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-  color: #6E9C30;
+  color: #7fa54a;
   /* on hover */
   /* on click */
 }
 /* line 49, ../scss/editor-style.scss */
 body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-  color: #557925;
+  color: #67853c;
 }
 /* line 58, ../scss/editor-style.scss */
 body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {

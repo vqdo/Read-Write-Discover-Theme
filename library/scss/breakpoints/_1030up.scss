@@ -10,18 +10,27 @@ be seen on the Desktop.
 ******************************************************************/
 
 .wrap {
-  width: 1040px;
-}
-.wrap.center {
-    margin: auto;
+    @include container(1024px);    
 }
 
 .intro-panel {
-    background: url('../images/rts-boy.jpg') no-repeat 50% #F3ECDC;
-    height: 480px;
-    width: 100%;
+    .main-image {
+        height: 480px;
+    }
+
 }
 .intro-panel p {
     margin: 0;
     padding: 130px 0 0 520px;
+}
+
+/*********************
+NEWS CONTAINER
+*********************/
+
+#news-content {
+    #main-news {
+
+        top: -220px;
+    }
 }

@@ -1,14 +1,66 @@
-<?php get_header(); ?>
+<?php 
+		get_header();
 
+		// Get required text for homepage 
+		$about_text 							= get_custom_text('homepage_about'); 
+		$announcements 						= get_announcements();
+		$max_announcements_words 	= 80;
+
+?>
+			<div class="background-overlay"></div>
 			<div id="content">
-				<div class="intro-panel">
-					<div class="wrap center">
-						<p>
-							<?php get_custom_text('Homepage Splash Text') ?>
-						</p>
+				<div class="intro-panel wrap">
+					<div class="main-image center">
 					</div>
 				</div>
+				<div id="news-content">
+					<div class="wrap">
+						<div class="info c6">
+							<h2><?php $about_text.the_title() ?></h2>
+						</div>					
+						<div id="main-news" class="c6">
+							<h2>News &amp; Updates</h2>
+							<div class="inner">
+								<?php 
+									if ($announcements->have_posts()) : 
+										while ($announcements->have_posts()) : $announcements->the_post(); ?>
 
+									<!-- Announcement HTML -->	
+									<h3>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+											<?php the_title(); ?>
+										</a>
+									</h3>
+									<p class="byline entry-meta vcard">
+                   	<?php 
+                      printf( __( '%1$s ', 'bonestheme' ),
+         								
+         								/* the time the post was published */
+         								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>'
+
+      							); ?>
+									</p>
+
+									<p>
+										<?php echo wp_trim_words(get_the_content(), $max_announcements_words, ' <a href="' . get_the_permalink() . '">...</a>'); ?>
+									</p>
+								
+								<?php endwhile; 
+									    else : ?>
+
+									  <!-- No announcements -->
+									  There are no announcements right now.
+								
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="features" class="wrap decorative">
+					<div class="inner">
+						<h2>asdasd</h2>
+					</div>
+				</div>
 				<div id="inner-content" class="wrap cf">
 
 						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
