@@ -30,7 +30,17 @@ NEWS CONTAINER
 
 #news-content {
     #main-news {
-
         top: -220px;
+
+        .inner {
+            height: 655px;
+        }
+    }
+    .info {
+        .feature-box {
+            .feature-icon {
+                display: block;
+            }
+        }
     }
 }

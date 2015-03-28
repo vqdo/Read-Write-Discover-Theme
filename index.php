@@ -2,12 +2,11 @@
 		get_header();
 
 		// Get required text for homepage 
-		$about_text 							= get_custom_text('homepage_about'); 
-		$announcements 						= get_announcements();
+		$about_text 				= get_custom_text('homepage_about'); 
+		$announcements 				= get_announcements();
 		$max_announcements_words 	= 80;
 
 ?>
-			<div class="background-overlay"></div>
 			<div id="content">
 				<div class="intro-panel wrap">
 					<div class="main-image center">
@@ -16,9 +15,42 @@
 				<div id="news-content">
 					<div class="wrap">
 						<div class="info c6">
-							<h2><?php $about_text.the_title() ?></h2>
-						</div>					
-						<div id="main-news" class="c6">
+							<div class="info-image">
+								<div class="feature-box">
+									<div class="feature-icon">
+										<div class="feature-icon-border">
+
+										</div>
+									</div>
+									<div class="feature-text">
+										<h2>Targeted to the greatest need</h2>
+										<p>We serve areas that have a need for our program and target students who are recommended by their teachers</p>
+									</div>
+								</div>
+								<div class="feature-box">
+									<div class="feature-icon">
+										<div class="feature-icon-border">
+
+										</div>
+									</div>
+									<div class="feature-text">									
+									<h2>Volunteer-run</h2>
+									<p>Our organization is entirely volunteer run, from the high school students who serve as tutors and site coordinators </p>
+									</div>
+								</div>
+								<div class="feature-box">
+									<div class="feature-icon">
+										<div class="feature-icon-border">
+
+										</div>
+									</div>
+									<h2>Community-driven</h2>
+									<p>We partner with libraries, schools, literacy organizations, and city governments. We believe in the important of </p>
+								</div>																
+							</div>
+						</div>				
+
+						<div id="main-news">
 							<h2>News &amp; Updates</h2>
 							<div class="inner">
 								<?php 
@@ -56,12 +88,34 @@
 						</div>
 					</div>
 				</div>
-				<div id="features" class="wrap decorative">
-					<div class="inner">
-						<h2>asdasd</h2>
+				<div id="main-cta">			
+					<div class="wrap">
+						<div class="inner">
+							<div class="portal">
+								<h2>Parents</h2>
+								<p>Our organization is entirely volunteer run, from the high school students who serve as tutors and site coordinators to the blah blah blah</p>
+								<div class="cta">
+									<a href="/somewhere">Learn More</a>
+								</div>
+							</div>
+							<div class="portal">
+								<h2>Volunteers</h2>
+								<p>Our organization is entirely volunteer run, from the high school students who serve as tutors and site coordinators to the blah blah blah</p>
+								<div class="cta">
+									<a href="/somewhere">Learn More</a>
+								</div>								
+							</div>	
+							<div class="portal">
+								<h2>Partners</h2>
+								<p>Our organization is entirely volunteer run, from the high school students who serve as tutors and site coordinators to the blah blah blah</p>
+								<div class="cta">
+									<a href="/somewhere">Learn More</a>
+								</div>								
+							</div>			
+						</div>									
 					</div>
 				</div>
-				<div id="inner-content" class="wrap cf">
+<!-- 				<div id="inner-content" class="wrap cf">
 
 						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -125,7 +179,7 @@
 
 						</main>
 
-					<?php get_sidebar(); ?>
+					<?php get_sidebar(); ?> -->
 
 				</div>
 

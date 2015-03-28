@@ -26,6 +26,8 @@ the whole project.
 // normalize: http://necolas.github.io/normalize.css/
 @import "partials/normalize";
 
+@import "compass/utilities/general/clearfix";
+
 // Sass variables
 @import "partials/variables";
 

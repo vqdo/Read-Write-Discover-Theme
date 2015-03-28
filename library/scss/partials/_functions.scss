@@ -73,6 +73,12 @@ width: 65%;
 @function displayFont($size) {
     @return $headline-weight $size $fonts-headline;
 }
+@function displayFontAlt($size) {
+    @return $headline-weight $size $fonts-paragraph;
+}
 @function paragraphFont($size : 1em) {
-    @return $paragraph-weight $size $fonts-headline;
+    @return $paragraph-weight $size $fonts-paragraph;
+}
+@function paragraphFontAlt($size : 1em) {
+    @return normal $size $fonts-headline;
 }

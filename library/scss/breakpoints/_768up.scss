@@ -17,7 +17,9 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
-body {}
+body {
+	background: url('../images/linedpaper.png') $tan;
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -27,7 +29,6 @@ LAYOUT & GRID STYLES
 	@include container(768px);
 }
 .intro-panel {
-	background: $tan;
 	.main-image {
 	    background: url('../images/rts-boy.png') no-repeat 50%;
 	 	background-size: contain;
@@ -102,7 +103,7 @@ NAVIGATION STYLES
 			text-transform: uppercase;
 
 			&:hover {
-				background: $blue;
+				background: $green;
 				color: $white;
 			}
 		}
@@ -331,12 +332,12 @@ NEWS CONTAINER
 *********************/
 
 #news-content {
+
 	.wrap {
-		background: $white;
+		height: 400px;
 	}
-	#main-news {
-		background: $tan;
-		padding: 0 0 unit(2) unit(2);
+	#main-news {		
+		height: 495px;		
 		position: relative;
 			top: -160px;	
 		h2 {
@@ -344,12 +345,94 @@ NEWS CONTAINER
 			margin: 0;
 		}			
 		.inner {
-			background: $white;
+			height: 595px;
+			overflow: auto;				
 			//box-shadow: inset 0 0 unit(2) black(0.1);
-			padding: unit(1) unit(2);
-			min-height: unit(30);
 			font-size: 1em;
 		}
+
+		@include span(6);
+	}
+
+	.info {		
+		display: block;
+		.feature-box {
+
+		}
+
+		@include span(6);
+	}	
+}
+
+/*********************
+CTA
+*********************/
+
+#main-cta {
+	height: 400px;	
+	.wrap {
+		.inner {
+			position: absolute;
+				top: unit(10);
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.portal {
+
+		@include span(4);
+	}
+}
+
+.cta {
+	border: 1px solid $tan;
+	display: inline-block;
+	font-size: 1.2em;	
+	margin: 1em 0;
+	text-transform: uppercase;
+
+	a {
+		display: block;
+		padding: unit(1) unit(2);		
+		letter-spacing: 0em;		
+	
+		@include transition(all 0.2s ease-in-out);
+
+		&:hover {
+			letter-spacing: 0.2em;
+		}
+	}
+}
+
+/*********************
+Pages
+*********************/
+
+.page {
+	#main {
+		.entry-content {
+			@include span(8);		
+		}
+		.sidebar {
+			@include span(4);
+		}
+	}
+}
+
+.footer {
+	img {
+		display: block;
+		opacity: 0.9;
+		float: left;
+		padding: unit(1);
+
+		@include span(2);		
+	}
+	.blockquote {
+		@include span(7);
+	}
+	.address {
+		@include span(3);
 	}
 }
 
@@ -377,4 +460,3 @@ mobile. Make sure to double check these!
 		}
 	}
 } /* end .footer-links */
-

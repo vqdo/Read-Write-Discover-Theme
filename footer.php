@@ -1,27 +1,25 @@
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div id="inner-footer" class="wrap cf">
-
-					<nav role="navigation">
-						<?php wp_nav_menu(array(
-    					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
-    					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-    					'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
-    					'theme_location' => 'footer-links',             // where it's located in the theme
-    					'before' => '',                                 // before the menu
-    					'after' => '',                                  // after the menu
-    					'link_before' => '',                            // before each link
-    					'link_after' => '',                             // after each link
-    					'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); ?>
-					</nav>
-
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
-
+                <img src="<?php echo get_template_directory_uri(); ?>/library/images/rwd-logo178x100.png" alt="Read Write Discover">
+		        <div class="blockquote">
+        			<blockquote cite="http://www.ed.gov/blog/2014/06/lessons-learned-the-importance-of-summer-experiential-learning">
+                     "Studies demonstrate that there is a notable trend of learning loss when young people do not engage in educational opportunities during summer months." 
+                     <span class="citation">&#8212; <a href="http://www.ed.gov/blog/2014/06/lessons-learned-the-importance-of-summer-experiential-learning">U.S. Department of Education</a></span>
+                     </blockquote>
+                </div>
+					
+                    <div class="address">
+                        <h1>Contact Us</h1>
+                        <address>
+                        <?php 
+                            $address = get_custom_text('rwd_address')->the_post();
+                            the_content();                          
+                        ?>
+                        </address>
+                    </div>
 				</div>
-
+<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 			</footer>
 
 		</div>

@@ -126,5 +126,16 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  window.rwd = (function() {
+    console.log("Init rwd");
+    var self = {};
+
+    self.initMap = function(id) {
+      console.log(id);
+    }
+
+    return self;
+  })();
+
 
 }); /* end of as page load scripts */

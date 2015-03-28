@@ -71,3 +71,10 @@ probably best not to use it. I mean, were you going to anyway? */
 }
 
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

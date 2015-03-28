@@ -35,13 +35,13 @@ $med-gray:          #6E6A64;
 
 $text-color:        $dark-gray;
 
-$blue:              #1E86D0;
-$light-blue:        #8DDBDF;
+$light-blue:        #b5d1e5;
+$blue:              $light-blue;
 $light-yellow:      #FFE665;
 
 $tan:               #F3ECDC;
 $tan-med:           #a59e93;
-$tan-dark:          #D5A670;
+$tan-dark:          $med-gray;
 
 $green:             #7fa54a;
 
@@ -57,9 +57,9 @@ $disabled-gray:     #cfcfcf;
 /*** Breakpoints */
 $max-page-size:     1240px;
 
-$headline-weight:   700;
+$headline-weight:   bold;
 $paragraph-weight:  600;
-$fonts-headline:    "ff-enzo-web", Helvetica, Arial, sans-serif;
+$fonts-headline:    "ff-tisa-web-pro", Georgia, serif;
 $fonts-paragraph:   "ff-enzo-web", Helvetica, Arial, sans-serif;
 
 /*

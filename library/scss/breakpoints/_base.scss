@@ -18,7 +18,7 @@ GENERAL STYLES
 *********************/
 
 body {
-	background-color: $med-gray;	
+	background-color: $tan;	
 	font: paragraphFont();
 	font-size: 100%;
 	line-height: 1.5;
@@ -26,14 +26,13 @@ body {
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
-.background-overlay {
-	background: $tan;
-	height: 90%;
+.overlay {
 	position: absolute;
 		top: 0;
 		left: 0;
 	width: 100%;
-	z-index: -1;
+	height: 100%;
+	z-index: 5;
 }
 
 /********************
@@ -84,6 +83,12 @@ LAYOUT & GRID STYLES
 .wrap {
 	width: 96%;
 	margin: 0 auto;
+
+	@include clearfix;
+
+	img {
+		max-width: 100%;
+	}
 }
 
 /*********************
@@ -135,12 +140,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 3.5em;
+	font-size: 2.8em;
 	line-height: 1.333em;
 }
 
 h2, .h2 {
-	font-size: 2.75em;
+	font-size: 2.5em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 }
@@ -303,8 +308,8 @@ POSTS & CONTENT STYLES
 			}
 
 			footer {
+				border-top: 1px solid $light-gray;				
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;
@@ -419,9 +424,9 @@ POSTS & CONTENT STYLES
 			blockquote {
 				margin: 0 0 1.5em 0.75em;
 				padding: 0 0 0 0.75em;
-				border-left: 3px solid $blue;
+				border-left: 3px solid $green;
 				font-style: italic;
-				color: $meta-gray;
+				color: $tan-med;
 
 				&:before {}
 
@@ -597,7 +602,6 @@ PAGE NAVI STYLES
 		}
 
 	} /* end .wp-prev-next */
-
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
@@ -898,7 +902,7 @@ NEWS CONTAINER
 
 #news-content {
 	color: $black;
-	min-height: 300px;
+	height: auto;
 	h2 {
 		color: $tan-med;
 		letter-spacing: -2px;
@@ -908,9 +912,9 @@ NEWS CONTAINER
 	}
 	#main-news {	
 		.inner {
-			border-top: unit(1) solid $tan-med;			
-			max-height: 400px;
-			overflow: auto;	
+			background: $white;			
+			border-top: unit(1) solid $tan-med;		
+			padding: unit(1) unit(2);				
 		}
 		.byline {
 			color: $med-gray;
@@ -926,22 +930,85 @@ NEWS CONTAINER
 			letter-spacing: -1px;
 			line-height: 1em;
 		}
-    	//border-top: unit(1) solid $red;			
+    	
+    	@include span(12);	
 	}
-	.info {
+	.info {		
+		display: none;
+		padding: 0 unit(1) unit(1) unit(1);
+		.feature-box {
+			background: $white;		
+			border-bottom: 1px solid $gray;
+			padding: unit(1);
+			width: 100%;
+			height: 160px;
 
+			&:first-child {
+				border-top: unit(1) solid $tan-med;					
+			}
+
+			.feature-icon {
+				display: none;
+				float: left;			
+				margin: unit(1) unit(2) 0 unit(1) ;
+
+				.feature-icon-border {
+					border-radius: 100px;		
+					box-shadow: inset 0 0 unit(1) $green;								
+					width: 110px;
+					height: 110px;					
+				}
+			}
+			p {
+				margin-top: 0;
+			}
+		}
+		h2 {
+			color: $med-gray;
+			font: displayFont(1.7em);
+			margin-bottom: 0;
+		}
 	}
 
 }
 
 /*********************
-Features
+CTA
 *********************/
 
-#features {
-	.inner {
-		background: $green;
-		min-height: 200px;
+#main-cta {
+	background: $tan-dark;
+
+	.wrap {
+		position: relative;
+		margin: auto;
+	}
+	.portal {
+		color: $light-blue;
+		height: 100%;
+		padding: unit(1) 0;
+		text-align: center;
+		h2 {
+			font-size: 1.5em;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+		}
+		p {
+			font: paragraphFontAlt(); 
+		}
+		.cta {
+			a {
+				color: $tan;		
+				text-decoration: none;
+
+				&:hover {
+					background: $tan-med;
+					color: $white;
+				}				
+			}
+		}
+
+		@include span(12);
 	}
 }
 
@@ -951,8 +1018,53 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: $dark-gray;
+	color: $green;
+	h1 {
+		color: $light-blue;
+		font: paragraphFont(1em);
+		text-transform: lowercase;
+	}
+	.wrap {
+		padding: unit(2) 0;
+	}
+
+	img {
+		display: none;
+	}
+	.blockquote {
+		float: left;
+		font: paragraphFontAlt(1.2em);
+		font-style: italic;
+
+		.citation {
+			color: $med-gray;
+			float: right;
+			margin: unit(1) 0;
+
+			a {
+				color: $med-gray;
+				text-decoration: none;
+			}
+		}
+
+		@include span(12);
+	}
+	.copyright {
+
+	}
+
+	.address {
+		address {
+			border-right: 1px solid $tan-dark;
+			font-style: normal;			
+			padding: 0 1em;
+		}
+		color: $tan-med;
+		font: paragraphFont();
+		text-align: right;
+		@include span(12);
+	}
 }
 
 	/*
@@ -976,3 +1088,36 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+
+/**** PAGE ******/
+
+.page {
+	#main {
+		border-top: unit(1) solid $tan-med;
+		margin: unit(1) 0;
+		header {
+			padding: 0;
+		}
+		h1, h2 {
+			color: $tan-med;
+			margin: 0;				
+			text-transform: lowercase;
+		}
+		h1 {
+			padding: 0.5em;	
+		}
+		h2 {
+			color: $tan-dark;
+			font-size: 2em;
+		}
+		.entry-content {
+			@include span(12);
+			font-size: 1.3em;			
+		}
+		.sidebar {
+			@include span(12);
+			margin-top: 1.5em;
+		}
+	}
+}

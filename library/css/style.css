@@ -762,6 +762,42 @@ over your project's layout.
 }
 
 /* line 46, ../scss/partials/_grid.scss */
+.c4 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+
+/* line 49, ../scss/partials/_grid.scss */
+.c2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+
+/* line 52, ../scss/partials/_grid.scss */
+.c1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 8.33333%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+
+/* line 55, ../scss/partials/_grid.scss */
 .wrap.decorative {
   width: 110%;
 }
@@ -1212,7 +1248,7 @@ GENERAL STYLES
 *********************/
 /* line 20, ../scss/breakpoints/_base.scss */
 body {
-  background-color: #6E6A64;
+  background-color: #F3ECDC;
   font: 600 1em "ff-enzo-web", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
@@ -1222,14 +1258,13 @@ body {
 }
 
 /* line 29, ../scss/breakpoints/_base.scss */
-.background-overlay {
-  background: #F3ECDC;
-  height: 90%;
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+  height: 100%;
+  z-index: 5;
 }
 
 /********************
@@ -1274,27 +1309,37 @@ style a page via class
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-/* line 84, ../scss/breakpoints/_base.scss */
+/* line 83, ../scss/breakpoints/_base.scss */
 .wrap {
   width: 96%;
   margin: 0 auto;
+}
+/* line 75, ../scss/partials/_mixins.scss */
+.wrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 89, ../scss/breakpoints/_base.scss */
+.wrap img {
+  max-width: 100%;
 }
 
 /*********************
 LINK STYLES
 *********************/
-/* line 93, ../scss/breakpoints/_base.scss */
+/* line 98, ../scss/breakpoints/_base.scss */
 a, a:visited {
   color: #7fa54a;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
-/* line 97, ../scss/breakpoints/_base.scss */
+/* line 102, ../scss/breakpoints/_base.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
   color: #67853c;
 }
-/* line 107, ../scss/breakpoints/_base.scss */
+/* line 112, ../scss/breakpoints/_base.scss */
 a:link, a:visited:link {
   /*
   this highlights links on iPhones/iPads.
@@ -1307,47 +1352,47 @@ a:link, a:visited:link {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 121, ../scss/breakpoints/_base.scss */
+/* line 126, ../scss/breakpoints/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-family: "ff-enzo-web", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
+  font-weight: bold;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
   */
   /* removing text decoration from all headline links */
 }
-/* line 132, ../scss/breakpoints/_base.scss */
+/* line 137, ../scss/breakpoints/_base.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
 
-/* line 137, ../scss/breakpoints/_base.scss */
+/* line 142, ../scss/breakpoints/_base.scss */
 h1, .h1 {
-  font-size: 3.5em;
+  font-size: 2.8em;
   line-height: 1.333em;
 }
 
-/* line 142, ../scss/breakpoints/_base.scss */
+/* line 147, ../scss/breakpoints/_base.scss */
 h2, .h2 {
-  font-size: 2.75em;
+  font-size: 2.5em;
   line-height: 1.4em;
   margin-bottom: 0.375em;
 }
 
-/* line 148, ../scss/breakpoints/_base.scss */
+/* line 153, ../scss/breakpoints/_base.scss */
 h3, .h3 {
   font-size: 1.7em;
 }
 
-/* line 152, ../scss/breakpoints/_base.scss */
+/* line 157, ../scss/breakpoints/_base.scss */
 h4, .h4 {
   font-size: 1.1em;
-  font-weight: 700;
+  font-weight: bold;
 }
 
-/* line 157, ../scss/breakpoints/_base.scss */
+/* line 162, ../scss/breakpoints/_base.scss */
 h5, .h5 {
   font-size: 0.846em;
   line-height: 2.09em;
@@ -1358,11 +1403,11 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
-/* line 173, ../scss/breakpoints/_base.scss */
+/* line 178, ../scss/breakpoints/_base.scss */
 #logo a {
   color: #6E6A64;
 }
-/* line 175, ../scss/breakpoints/_base.scss */
+/* line 180, ../scss/breakpoints/_base.scss */
 #logo a h1 {
   float: left;
   font: 600 0.3em "ff-enzo-web", Helvetica, Arial, sans-serif;
@@ -1371,13 +1416,13 @@ HEADER STYLES
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 182, ../scss/breakpoints/_base.scss */
+/* line 187, ../scss/breakpoints/_base.scss */
 #logo a h1:after {
   color: #BA191F;
   content: "\00BB";
   padding: 0 1em;
 }
-/* line 189, ../scss/breakpoints/_base.scss */
+/* line 194, ../scss/breakpoints/_base.scss */
 #logo img {
   float: left;
   height: 40px;
@@ -1395,7 +1440,7 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-/* line 209, ../scss/breakpoints/_base.scss */
+/* line 214, ../scss/breakpoints/_base.scss */
 .nav {
   border-bottom: 0;
   margin: 0;
@@ -1403,17 +1448,17 @@ and more scalable.
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 213, ../scss/breakpoints/_base.scss */
+/* line 218, ../scss/breakpoints/_base.scss */
 .nav.top-nav {
   margin: 16px 0 0 0;
 }
-/* line 215, ../scss/breakpoints/_base.scss */
+/* line 220, ../scss/breakpoints/_base.scss */
 .nav.top-nav a {
   display: block;
   font-weight: 600;
   color: #6E6A64;
 }
-/* line 223, ../scss/breakpoints/_base.scss */
+/* line 228, ../scss/breakpoints/_base.scss */
 .nav li {
   /*
   so you really have to rethink your dropdowns for mobile.
@@ -1423,7 +1468,7 @@ and more scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-/* line 225, ../scss/breakpoints/_base.scss */
+/* line 230, ../scss/breakpoints/_base.scss */
 .nav li a {
   text-decoration: none;
   /*
@@ -1433,7 +1478,7 @@ and more scalable.
   keep this file as small as possible!
   */
 }
-/* line 255, ../scss/breakpoints/_base.scss */
+/* line 260, ../scss/breakpoints/_base.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 30px;
@@ -1443,34 +1488,34 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 291, ../scss/breakpoints/_base.scss */
+/* line 296, ../scss/breakpoints/_base.scss */
 #content {
   margin-top: 0;
 }
 
-/* line 295, ../scss/breakpoints/_base.scss */
+/* line 300, ../scss/breakpoints/_base.scss */
 .hentry {
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 1.5em;
   border: 1px solid #ccc;
 }
-/* line 301, ../scss/breakpoints/_base.scss */
+/* line 306, ../scss/breakpoints/_base.scss */
 .hentry header {
   padding: 1.5em;
 }
-/* line 305, ../scss/breakpoints/_base.scss */
+/* line 310, ../scss/breakpoints/_base.scss */
 .hentry footer {
-  padding: 1.5em;
   border-top: 1px solid #f8f9fa;
+  padding: 1.5em;
 }
-/* line 309, ../scss/breakpoints/_base.scss */
+/* line 314, ../scss/breakpoints/_base.scss */
 .hentry footer p {
   margin: 0;
 }
 
 /* end .hentry */
-/* line 316, ../scss/breakpoints/_base.scss */
+/* line 321, ../scss/breakpoints/_base.scss */
 .single-title,
 .page-title,
 .entry-title {
@@ -1487,7 +1532,7 @@ POSTS & CONTENT STYLES
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
-/* line 341, ../scss/breakpoints/_base.scss */
+/* line 346, ../scss/breakpoints/_base.scss */
 .byline {
   color: #9fa6b4;
   font-style: italic;
@@ -1495,7 +1540,7 @@ POSTS & CONTENT STYLES
 }
 
 /* entry content */
-/* line 350, ../scss/breakpoints/_base.scss */
+/* line 355, ../scss/breakpoints/_base.scss */
 .entry-content {
   padding: 1.5em 1.5em 0;
   /*
@@ -1505,17 +1550,17 @@ POSTS & CONTENT STYLES
   but it's up to you. Feel free to change it up.
   */
 }
-/* line 353, ../scss/breakpoints/_base.scss */
+/* line 358, ../scss/breakpoints/_base.scss */
 .entry-content p {
   margin: 0 0 1.5em;
 }
-/* line 378, ../scss/breakpoints/_base.scss */
+/* line 383, ../scss/breakpoints/_base.scss */
 .entry-content table {
   width: 100%;
   border: 1px solid #eaedf2;
   margin-bottom: 1.5em;
 }
-/* line 383, ../scss/breakpoints/_base.scss */
+/* line 388, ../scss/breakpoints/_base.scss */
 .entry-content table caption {
   margin: 0 0 7px;
   font-size: 0.75em;
@@ -1523,55 +1568,55 @@ POSTS & CONTENT STYLES
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 392, ../scss/breakpoints/_base.scss */
+/* line 397, ../scss/breakpoints/_base.scss */
 .entry-content tr {
   border-bottom: 1px solid #eaedf2;
 }
-/* line 395, ../scss/breakpoints/_base.scss */
+/* line 400, ../scss/breakpoints/_base.scss */
 .entry-content tr:nth-child(even) {
   background-color: #f8f9fa;
 }
-/* line 400, ../scss/breakpoints/_base.scss */
+/* line 405, ../scss/breakpoints/_base.scss */
 .entry-content td {
   padding: 7px;
   border-right: 1px solid #eaedf2;
 }
-/* line 404, ../scss/breakpoints/_base.scss */
+/* line 409, ../scss/breakpoints/_base.scss */
 .entry-content td:last-child {
   border-right: 0;
 }
-/* line 409, ../scss/breakpoints/_base.scss */
+/* line 414, ../scss/breakpoints/_base.scss */
 .entry-content th {
   background-color: #f8f9fa;
   border-bottom: 1px solid #eaedf2;
   border-right: 1px solid #eaedf2;
 }
-/* line 414, ../scss/breakpoints/_base.scss */
+/* line 419, ../scss/breakpoints/_base.scss */
 .entry-content th:last-child {
   border-right: 0;
 }
-/* line 419, ../scss/breakpoints/_base.scss */
+/* line 424, ../scss/breakpoints/_base.scss */
 .entry-content blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid #2980b9;
+  border-left: 3px solid #7fa54a;
   font-style: italic;
-  color: #9fa6b4;
+  color: #a59e93;
 }
-/* line 434, ../scss/breakpoints/_base.scss */
+/* line 439, ../scss/breakpoints/_base.scss */
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
 }
-/* line 441, ../scss/breakpoints/_base.scss */
+/* line 446, ../scss/breakpoints/_base.scss */
 .entry-content img {
   margin: 0 0 1.5em 0;
   max-width: 100%;
   height: auto;
 }
-/* line 457, ../scss/breakpoints/_base.scss */
+/* line 462, ../scss/breakpoints/_base.scss */
 .entry-content .size-auto,
 .entry-content .size-full,
 .entry-content .size-large,
@@ -1580,7 +1625,7 @@ POSTS & CONTENT STYLES
   max-width: 100%;
   height: auto;
 }
-/* line 466, ../scss/breakpoints/_base.scss */
+/* line 471, ../scss/breakpoints/_base.scss */
 .entry-content pre {
   background: #323944;
   color: #f8f9fa;
@@ -1591,20 +1636,20 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 477, ../scss/breakpoints/_base.scss */
+/* line 482, ../scss/breakpoints/_base.scss */
 .wp-caption {
   max-width: 100%;
   background: #eee;
   padding: 5px;
   /* images inside wp-caption */
 }
-/* line 483, ../scss/breakpoints/_base.scss */
+/* line 488, ../scss/breakpoints/_base.scss */
 .wp-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 489, ../scss/breakpoints/_base.scss */
+/* line 494, ../scss/breakpoints/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
   margin: 4px 0 7px;
@@ -1615,7 +1660,7 @@ POSTS & CONTENT STYLES
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
-/* line 523, ../scss/breakpoints/_base.scss */
+/* line 528, ../scss/breakpoints/_base.scss */
 .tags {
   margin: 0;
 }
@@ -1623,17 +1668,17 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 531, ../scss/breakpoints/_base.scss */
+/* line 536, ../scss/breakpoints/_base.scss */
 .pagination,
 .wp-prev-next {
   margin: 1.5em 0;
 }
 
-/* line 535, ../scss/breakpoints/_base.scss */
+/* line 540, ../scss/breakpoints/_base.scss */
 .pagination {
   text-align: center;
 }
-/* line 538, ../scss/breakpoints/_base.scss */
+/* line 543, ../scss/breakpoints/_base.scss */
 .pagination ul {
   display: inline-block;
   background-color: #fff;
@@ -1642,7 +1687,7 @@ PAGE NAVI STYLES
   clear: both;
   border-radius: 3px;
 }
-/* line 547, ../scss/breakpoints/_base.scss */
+/* line 552, ../scss/breakpoints/_base.scss */
 .pagination li {
   padding: 0;
   margin: 0;
@@ -1651,7 +1696,7 @@ PAGE NAVI STYLES
   overflow: hidden;
   border-right: 1px solid #eaedf2;
 }
-/* line 556, ../scss/breakpoints/_base.scss */
+/* line 561, ../scss/breakpoints/_base.scss */
 .pagination a, .pagination span {
   margin: 0;
   text-decoration: none;
@@ -1664,17 +1709,17 @@ PAGE NAVI STYLES
   display: block;
   color: #2980b9;
 }
-/* line 568, ../scss/breakpoints/_base.scss */
+/* line 573, ../scss/breakpoints/_base.scss */
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
   background-color: #2980b9;
   color: #fff;
 }
-/* line 574, ../scss/breakpoints/_base.scss */
+/* line 579, ../scss/breakpoints/_base.scss */
 .pagination .current {
   cursor: default;
   color: #333333;
 }
-/* line 578, ../scss/breakpoints/_base.scss */
+/* line 583, ../scss/breakpoints/_base.scss */
 .pagination .current:hover, .pagination .current:focus {
   background-color: #fff;
   color: #333333;
@@ -1682,11 +1727,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 591, ../scss/breakpoints/_base.scss */
+/* line 596, ../scss/breakpoints/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 595, ../scss/breakpoints/_base.scss */
+/* line 600, ../scss/breakpoints/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -1696,7 +1741,7 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 606, ../scss/breakpoints/_base.scss */
+/* line 610, ../scss/breakpoints/_base.scss */
 #comments-title {
   padding: 0.75em;
   margin: 0;
@@ -1704,13 +1749,13 @@ COMMENT STYLES
   /* number of comments span */
 }
 
-/* line 626, ../scss/breakpoints/_base.scss */
+/* line 630, ../scss/breakpoints/_base.scss */
 .commentlist {
   margin: 0;
   list-style-type: none;
 }
 
-/* line 631, ../scss/breakpoints/_base.scss */
+/* line 635, ../scss/breakpoints/_base.scss */
 .comment {
   position: relative;
   clear: both;
@@ -1722,78 +1767,78 @@ COMMENT STYLES
   /* end children */
   /* general comment classes */
 }
-/* line 638, ../scss/breakpoints/_base.scss */
+/* line 642, ../scss/breakpoints/_base.scss */
 .comment .comment-author {
   padding: 7px;
   border: 0;
 }
-/* line 644, ../scss/breakpoints/_base.scss */
+/* line 648, ../scss/breakpoints/_base.scss */
 .comment .vcard {
   margin-left: 50px;
 }
-/* line 647, ../scss/breakpoints/_base.scss */
+/* line 651, ../scss/breakpoints/_base.scss */
 .comment .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 655, ../scss/breakpoints/_base.scss */
+/* line 659, ../scss/breakpoints/_base.scss */
 .comment .vcard time {
   display: block;
   font-size: 0.9em;
   font-style: italic;
 }
-/* line 660, ../scss/breakpoints/_base.scss */
+/* line 664, ../scss/breakpoints/_base.scss */
 .comment .vcard time a {
   color: #9fa6b4;
   text-decoration: none;
 }
-/* line 664, ../scss/breakpoints/_base.scss */
+/* line 668, ../scss/breakpoints/_base.scss */
 .comment .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 674, ../scss/breakpoints/_base.scss */
+/* line 678, ../scss/breakpoints/_base.scss */
 .comment .vcard .avatar {
   position: absolute;
   left: 16px;
   border-radius: 50%;
 }
-/* line 682, ../scss/breakpoints/_base.scss */
+/* line 686, ../scss/breakpoints/_base.scss */
 .comment:last-child {
   margin-bottom: 0;
 }
-/* line 686, ../scss/breakpoints/_base.scss */
+/* line 690, ../scss/breakpoints/_base.scss */
 .comment .children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 704, ../scss/breakpoints/_base.scss */
+/* line 708, ../scss/breakpoints/_base.scss */
 .comment[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 708, ../scss/breakpoints/_base.scss */
+/* line 712, ../scss/breakpoints/_base.scss */
 .comment.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 713, ../scss/breakpoints/_base.scss */
+/* line 717, ../scss/breakpoints/_base.scss */
 .comment:not(.depth-1) {
   margin-top: 0;
   margin-left: 7px;
   padding: 7px;
 }
-/* line 726, ../scss/breakpoints/_base.scss */
+/* line 730, ../scss/breakpoints/_base.scss */
 .comment.odd {
   background-color: #fff;
 }
-/* line 729, ../scss/breakpoints/_base.scss */
+/* line 733, ../scss/breakpoints/_base.scss */
 .comment.even {
   background: #f8f9fa;
 }
 
 /* comment meta */
 /* comment content */
-/* line 763, ../scss/breakpoints/_base.scss */
+/* line 767, ../scss/breakpoints/_base.scss */
 .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
@@ -1802,7 +1847,7 @@ COMMENT STYLES
 
 /* end .commentlist .comment_content */
 /* comment reply link */
-/* line 772, ../scss/breakpoints/_base.scss */
+/* line 776, ../scss/breakpoints/_base.scss */
 .comment-reply-link {
   font-size: 0.9em;
   float: right;
@@ -1810,7 +1855,7 @@ COMMENT STYLES
 
 /* end .commentlist .comment-reply-link */
 /* edit comment link */
-/* line 784, ../scss/breakpoints/_base.scss */
+/* line 788, ../scss/breakpoints/_base.scss */
 .comment-edit-link {
   font-style: italic;
   margin: 0 7px;
@@ -1821,34 +1866,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 797, ../scss/breakpoints/_base.scss */
+/* line 801, ../scss/breakpoints/_base.scss */
 .comment-respond {
   padding: 1.5em;
   border-top: 1px solid #f8f9fa;
 }
 
-/* line 803, ../scss/breakpoints/_base.scss */
+/* line 807, ../scss/breakpoints/_base.scss */
 #reply-title {
   margin: 0;
 }
 
-/* line 807, ../scss/breakpoints/_base.scss */
+/* line 811, ../scss/breakpoints/_base.scss */
 .logged-in-as {
   color: #9fa6b4;
   font-style: italic;
   margin: 0;
 }
-/* line 812, ../scss/breakpoints/_base.scss */
+/* line 816, ../scss/breakpoints/_base.scss */
 .logged-in-as a {
   color: #333333;
 }
 
-/* line 817, ../scss/breakpoints/_base.scss */
+/* line 821, ../scss/breakpoints/_base.scss */
 .comment-form-comment {
   margin: 1.5em 0 0.7f5em;
 }
 
-/* line 821, ../scss/breakpoints/_base.scss */
+/* line 825, ../scss/breakpoints/_base.scss */
 .form-allowed-tags {
   padding: 1.5em;
   background-color: #f8f9fa;
@@ -1856,14 +1901,14 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 828, ../scss/breakpoints/_base.scss */
+/* line 832, ../scss/breakpoints/_base.scss */
 #submit {
   float: right;
   font-size: 1em;
 }
 
 /* comment form title */
-/* line 835, ../scss/breakpoints/_base.scss */
+/* line 839, ../scss/breakpoints/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -1871,13 +1916,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 848, ../scss/breakpoints/_base.scss */
+/* line 852, ../scss/breakpoints/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 853, ../scss/breakpoints/_base.scss */
+/* line 857, ../scss/breakpoints/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -1885,12 +1930,12 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 869, ../scss/breakpoints/_base.scss */
+/* line 873, ../scss/breakpoints/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
 
-/* line 886, ../scss/breakpoints/_base.scss */
+/* line 890, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: #fff;
   padding: 1.5em;
@@ -1903,12 +1948,12 @@ SIDEBARS & ASIDES
 /*********************
 NEWS CONTAINER
 *********************/
-/* line 899, ../scss/breakpoints/_base.scss */
+/* line 903, ../scss/breakpoints/_base.scss */
 #news-content {
   color: #323944;
-  min-height: 300px;
+  height: auto;
 }
-/* line 902, ../scss/breakpoints/_base.scss */
+/* line 906, ../scss/breakpoints/_base.scss */
 #news-content h2 {
   color: #a59e93;
   letter-spacing: -2px;
@@ -1916,47 +1961,196 @@ NEWS CONTAINER
   margin: 0.25em 0;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
-/* line 910, ../scss/breakpoints/_base.scss */
-#news-content #main-news .inner {
-  border-top: 10px solid #a59e93;
-  max-height: 400px;
-  overflow: auto;
+/* line 913, ../scss/breakpoints/_base.scss */
+#news-content #main-news {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
 }
-/* line 915, ../scss/breakpoints/_base.scss */
+/* line 914, ../scss/breakpoints/_base.scss */
+#news-content #main-news .inner {
+  background: #fff;
+  border-top: 10px solid #a59e93;
+  padding: 10px 20px;
+}
+/* line 919, ../scss/breakpoints/_base.scss */
 #news-content #main-news .byline {
   color: #6E6A64;
   text-transform: uppercase;
   font-size: 0.8em;
   font-style: normal;
 }
-/* line 921, ../scss/breakpoints/_base.scss */
+/* line 925, ../scss/breakpoints/_base.scss */
 #news-content #main-news h2 {
   text-transform: lowercase;
 }
-/* line 924, ../scss/breakpoints/_base.scss */
+/* line 928, ../scss/breakpoints/_base.scss */
 #news-content #main-news h3 {
   margin-bottom: 0;
   letter-spacing: -1px;
   line-height: 1em;
 }
+/* line 936, ../scss/breakpoints/_base.scss */
+#news-content .info {
+  display: none;
+  padding: 0 10px 10px 10px;
+}
+/* line 939, ../scss/breakpoints/_base.scss */
+#news-content .info .feature-box {
+  background: #fff;
+  border-bottom: 1px solid #eaedf2;
+  padding: 10px;
+  width: 100%;
+  height: 160px;
+}
+/* line 946, ../scss/breakpoints/_base.scss */
+#news-content .info .feature-box:first-child {
+  border-top: 10px solid #a59e93;
+}
+/* line 950, ../scss/breakpoints/_base.scss */
+#news-content .info .feature-box .feature-icon {
+  display: none;
+  float: left;
+  margin: 10px 20px 0 10px;
+}
+/* line 955, ../scss/breakpoints/_base.scss */
+#news-content .info .feature-box .feature-icon .feature-icon-border {
+  border-radius: 100px;
+  box-shadow: inset 0 0 10px #7fa54a;
+  width: 110px;
+  height: 110px;
+}
+/* line 962, ../scss/breakpoints/_base.scss */
+#news-content .info .feature-box p {
+  margin-top: 0;
+}
+/* line 966, ../scss/breakpoints/_base.scss */
+#news-content .info h2 {
+  color: #6E6A64;
+  font: bold 1.7em "ff-tisa-web-pro", Georgia, serif;
+  margin-bottom: 0;
+}
 
 /*********************
-Features
+CTA
 *********************/
-/* line 942, ../scss/breakpoints/_base.scss */
-#features .inner {
-  background: #7fa54a;
-  min-height: 200px;
+/* line 979, ../scss/breakpoints/_base.scss */
+#main-cta {
+  background: #6E6A64;
+}
+/* line 982, ../scss/breakpoints/_base.scss */
+#main-cta .wrap {
+  position: relative;
+  margin: auto;
+}
+/* line 986, ../scss/breakpoints/_base.scss */
+#main-cta .portal {
+  color: #b5d1e5;
+  height: 100%;
+  padding: 10px 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+/* line 991, ../scss/breakpoints/_base.scss */
+#main-cta .portal h2 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+/* line 996, ../scss/breakpoints/_base.scss */
+#main-cta .portal p {
+  font: normal 1em "ff-tisa-web-pro", Georgia, serif;
+}
+/* line 1000, ../scss/breakpoints/_base.scss */
+#main-cta .portal .cta a {
+  color: #F3ECDC;
+  text-decoration: none;
+}
+/* line 1004, ../scss/breakpoints/_base.scss */
+#main-cta .portal .cta a:hover {
+  background: #a59e93;
+  color: #fff;
 }
 
 /*********************
 FOOTER STYLES
 *********************/
-/* line 952, ../scss/breakpoints/_base.scss */
+/* line 1019, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
-  background-color: #323944;
-  color: #f8f9fa;
+  background-color: #333333;
+  color: #7fa54a;
+}
+/* line 1023, ../scss/breakpoints/_base.scss */
+.footer h1 {
+  color: #b5d1e5;
+  font: 600 1em "ff-enzo-web", Helvetica, Arial, sans-serif;
+  text-transform: lowercase;
+}
+/* line 1028, ../scss/breakpoints/_base.scss */
+.footer .wrap {
+  padding: 20px 0;
+}
+/* line 1032, ../scss/breakpoints/_base.scss */
+.footer img {
+  display: none;
+}
+/* line 1035, ../scss/breakpoints/_base.scss */
+.footer .blockquote {
+  float: left;
+  font: normal 1.2em "ff-tisa-web-pro", Georgia, serif;
+  font-style: italic;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+/* line 1040, ../scss/breakpoints/_base.scss */
+.footer .blockquote .citation {
+  color: #6E6A64;
+  float: right;
+  margin: 10px 0;
+}
+/* line 1045, ../scss/breakpoints/_base.scss */
+.footer .blockquote .citation a {
+  color: #6E6A64;
+  text-decoration: none;
+}
+/* line 1057, ../scss/breakpoints/_base.scss */
+.footer .address {
+  color: #a59e93;
+  font: 600 1em "ff-enzo-web", Helvetica, Arial, sans-serif;
+  text-align: right;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+/* line 1058, ../scss/breakpoints/_base.scss */
+.footer .address address {
+  border-right: 1px solid #6E6A64;
+  font-style: normal;
+  padding: 0 1em;
 }
 
 /*
@@ -1969,6 +2163,56 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+/**** PAGE ******/
+/* line 1096, ../scss/breakpoints/_base.scss */
+.page #main {
+  border-top: 10px solid #a59e93;
+  margin: 10px 0;
+}
+/* line 1099, ../scss/breakpoints/_base.scss */
+.page #main header {
+  padding: 0;
+}
+/* line 1102, ../scss/breakpoints/_base.scss */
+.page #main h1, .page #main h2 {
+  color: #a59e93;
+  margin: 0;
+  text-transform: lowercase;
+}
+/* line 1107, ../scss/breakpoints/_base.scss */
+.page #main h1 {
+  padding: 0.5em;
+}
+/* line 1110, ../scss/breakpoints/_base.scss */
+.page #main h2 {
+  color: #6E6A64;
+  font-size: 2em;
+}
+/* line 1114, ../scss/breakpoints/_base.scss */
+.page #main .entry-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+  font-size: 1.3em;
+}
+/* line 1118, ../scss/breakpoints/_base.scss */
+.page #main .sidebar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+  margin-top: 1.5em;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2088,10 +2332,15 @@ you can add resource intensive styles.
   /*********************
   GENERAL STYLES
   *********************/
+  /* line 20, ../scss/breakpoints/_768up.scss */
+  body {
+    background: url("../images/linedpaper.png") #F3ECDC;
+  }
+
   /*********************
   LAYOUT & GRID STYLES
   *********************/
-  /* line 26, ../scss/breakpoints/_768up.scss */
+  /* line 28, ../scss/breakpoints/_768up.scss */
   .wrap {
     max-width: 768px;
   }
@@ -2145,11 +2394,7 @@ you can add resource intensive styles.
     background-position: left top;
   }
 
-  /* line 29, ../scss/breakpoints/_768up.scss */
-  .intro-panel {
-    background: #F3ECDC;
-  }
-  /* line 31, ../scss/breakpoints/_768up.scss */
+  /* line 32, ../scss/breakpoints/_768up.scss */
   .intro-panel .main-image {
     background: url("../images/rts-boy.png") no-repeat 50%;
     background-size: contain;
@@ -2160,7 +2405,7 @@ you can add resource intensive styles.
   /*********************
   HEADER STYLES
   *********************/
-  /* line 47, ../scss/breakpoints/_768up.scss */
+  /* line 48, ../scss/breakpoints/_768up.scss */
   .header #inner-header {
     background: #fff;
     border-radius: 0 0 10px 10px;
@@ -2169,15 +2414,15 @@ you can add resource intensive styles.
     position: relative;
   }
 
-  /* line 57, ../scss/breakpoints/_768up.scss */
+  /* line 58, ../scss/breakpoints/_768up.scss */
   #logo img {
     opacity: 0.7;
   }
-  /* line 61, ../scss/breakpoints/_768up.scss */
+  /* line 62, ../scss/breakpoints/_768up.scss */
   #logo:hover img {
     opacity: 1;
   }
-  /* line 64, ../scss/breakpoints/_768up.scss */
+  /* line 65, ../scss/breakpoints/_768up.scss */
   #logo:hover a {
     color: #BA191F;
   }
@@ -2185,36 +2430,36 @@ you can add resource intensive styles.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 74, ../scss/breakpoints/_768up.scss */
+  /* line 75, ../scss/breakpoints/_768up.scss */
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 79, ../scss/breakpoints/_768up.scss */
+  /* line 80, ../scss/breakpoints/_768up.scss */
   .nav.top-nav a {
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: 1px;
     padding: 0.2em 0.25em;
     text-transform: uppercase;
   }
-  /* line 84, ../scss/breakpoints/_768up.scss */
+  /* line 85, ../scss/breakpoints/_768up.scss */
   .nav.top-nav a:hover, .nav.top-nav a:focus {
     border-bottom: 5px solid #F3ECDC;
-    color: #D5A670;
+    color: #6E6A64;
   }
-  /* line 90, ../scss/breakpoints/_768up.scss */
+  /* line 91, ../scss/breakpoints/_768up.scss */
   .nav.sub-nav {
     background: #6E6A64;
     padding: 3px 0;
     width: 100%;
   }
-  /* line 94, ../scss/breakpoints/_768up.scss */
+  /* line 95, ../scss/breakpoints/_768up.scss */
   .nav.sub-nav li {
     float: right;
   }
-  /* line 97, ../scss/breakpoints/_768up.scss */
+  /* line 98, ../scss/breakpoints/_768up.scss */
   .nav.sub-nav a {
     color: #F3ECDC;
     font: 600 0.8em "ff-enzo-web", Helvetica, Arial, sans-serif;
@@ -2222,17 +2467,17 @@ you can add resource intensive styles.
     text-align: right;
     text-transform: uppercase;
   }
-  /* line 104, ../scss/breakpoints/_768up.scss */
+  /* line 105, ../scss/breakpoints/_768up.scss */
   .nav.sub-nav a:hover {
-    background: #2980b9;
+    background: #7fa54a;
     color: #fff;
   }
-  /* line 110, ../scss/breakpoints/_768up.scss */
+  /* line 111, ../scss/breakpoints/_768up.scss */
   .nav ul {
     background: #323944;
     margin-top: 0;
   }
-  /* line 114, ../scss/breakpoints/_768up.scss */
+  /* line 115, ../scss/breakpoints/_768up.scss */
   .nav li {
     float: left;
     position: relative;
@@ -2241,7 +2486,7 @@ you can add resource intensive styles.
     */
     /* showing sub-menus */
   }
-  /* line 118, ../scss/breakpoints/_768up.scss */
+  /* line 119, ../scss/breakpoints/_768up.scss */
   .nav li a {
     border-bottom: 0;
     /*
@@ -2249,7 +2494,7 @@ you can add resource intensive styles.
     has the possibility of being a mobile device.
     */
   }
-  /* line 138, ../scss/breakpoints/_768up.scss */
+  /* line 139, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu,
   .nav li ul.children {
     margin-top: 0;
@@ -2260,7 +2505,7 @@ you can add resource intensive styles.
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  /* line 147, ../scss/breakpoints/_768up.scss */
+  /* line 148, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li,
   .nav li ul.children li {
     /*
@@ -2269,7 +2514,7 @@ you can add resource intensive styles.
     for usability. k, bai.
     */
   }
-  /* line 149, ../scss/breakpoints/_768up.scss */
+  /* line 150, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
     padding-left: 10px;
@@ -2278,18 +2523,18 @@ you can add resource intensive styles.
     width: 180px;
     border-bottom: 1px solid #ccc;
   }
-  /* line 166, ../scss/breakpoints/_768up.scss */
+  /* line 167, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 176, ../scss/breakpoints/_768up.scss */
+  /* line 177, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li ul,
   .nav li ul.children li ul {
     top: 0;
     left: 100%;
   }
-  /* line 191, ../scss/breakpoints/_768up.scss */
+  /* line 192, ../scss/breakpoints/_768up.scss */
   .nav li:hover > ul {
     top: auto;
     visibility: visible;
@@ -2299,28 +2544,28 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 211, ../scss/breakpoints/_768up.scss */
+  /* line 212, ../scss/breakpoints/_768up.scss */
   .sidebar {
     margin-top: 2.2em;
   }
 
-  /* line 215, ../scss/breakpoints/_768up.scss */
+  /* line 216, ../scss/breakpoints/_768up.scss */
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em;
   }
 
-  /* line 220, ../scss/breakpoints/_768up.scss */
+  /* line 221, ../scss/breakpoints/_768up.scss */
   .widget {
     padding: 0 10px;
     margin: 2.2em 0;
   }
-  /* line 225, ../scss/breakpoints/_768up.scss */
+  /* line 226, ../scss/breakpoints/_768up.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 233, ../scss/breakpoints/_768up.scss */
+  /* line 234, ../scss/breakpoints/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -2340,28 +2585,149 @@ you can add resource intensive styles.
   /*********************
   NEWS CONTAINER
   *********************/
-  /* line 334, ../scss/breakpoints/_768up.scss */
+  /* line 336, ../scss/breakpoints/_768up.scss */
   #news-content .wrap {
-    background: #fff;
+    height: 400px;
   }
-  /* line 337, ../scss/breakpoints/_768up.scss */
+  /* line 339, ../scss/breakpoints/_768up.scss */
   #news-content #main-news {
-    background: #F3ECDC;
-    padding: 0 0 20px 20px;
+    height: 495px;
     position: relative;
     top: -160px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
   }
-  /* line 342, ../scss/breakpoints/_768up.scss */
+  /* line 343, ../scss/breakpoints/_768up.scss */
   #news-content #main-news h2 {
     font-size: 2em;
     margin: 0;
   }
-  /* line 346, ../scss/breakpoints/_768up.scss */
+  /* line 347, ../scss/breakpoints/_768up.scss */
   #news-content #main-news .inner {
-    background: #fff;
-    padding: 10px 20px;
-    min-height: 300px;
+    height: 595px;
+    overflow: auto;
     font-size: 1em;
+  }
+  /* line 357, ../scss/breakpoints/_768up.scss */
+  #news-content .info {
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+
+  /*********************
+  CTA
+  *********************/
+  /* line 371, ../scss/breakpoints/_768up.scss */
+  #main-cta {
+    height: 400px;
+  }
+  /* line 374, ../scss/breakpoints/_768up.scss */
+  #main-cta .wrap .inner {
+    position: absolute;
+    top: 100px;
+    height: 100%;
+    width: 100%;
+  }
+  /* line 381, ../scss/breakpoints/_768up.scss */
+  #main-cta .portal {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+
+  /* line 387, ../scss/breakpoints/_768up.scss */
+  .cta {
+    border: 1px solid #F3ECDC;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 1em 0;
+    text-transform: uppercase;
+  }
+  /* line 394, ../scss/breakpoints/_768up.scss */
+  .cta a {
+    display: block;
+    padding: 10px 20px;
+    letter-spacing: 0em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  /* line 401, ../scss/breakpoints/_768up.scss */
+  .cta a:hover {
+    letter-spacing: 0.2em;
+  }
+
+  /*********************
+  Pages
+  *********************/
+  /* line 413, ../scss/breakpoints/_768up.scss */
+  .page #main .entry-content {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+  /* line 416, ../scss/breakpoints/_768up.scss */
+  .page #main .sidebar {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+
+  /* line 423, ../scss/breakpoints/_768up.scss */
+  .footer img {
+    display: block;
+    opacity: 0.9;
+    float: left;
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+  /* line 431, ../scss/breakpoints/_768up.scss */
+  .footer .blockquote {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+  /* line 434, ../scss/breakpoints/_768up.scss */
+  .footer .address {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
   }
 
   /*********************
@@ -2372,7 +2738,7 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 367, ../scss/breakpoints/_768up.scss */
+  /* line 450, ../scss/breakpoints/_768up.scss */
   .footer-links ul li {
     /*
     be careful with the depth of your menus.
@@ -2449,6 +2815,14 @@ you can add resource intensive styles.
   /* line 32, ../scss/breakpoints/_1030up.scss */
   #news-content #main-news {
     top: -220px;
+  }
+  /* line 35, ../scss/breakpoints/_1030up.scss */
+  #news-content #main-news .inner {
+    height: 655px;
+  }
+  /* line 41, ../scss/breakpoints/_1030up.scss */
+  #news-content .info .feature-box .feature-icon {
+    display: block;
   }
 
   /* line 2, ../scss/animations.scss */

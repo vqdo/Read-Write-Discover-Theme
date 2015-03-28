@@ -289,7 +289,10 @@ function create_dynamic_content_posts() {
   }
   create_dynamic_content_post('homepage_splash', 'HomepageSplash', "This is an example. Fill it out on your Dashboard.", 'homepage');
   create_dynamic_content_post('homepage_about', 'About', "About this page", 'homepage');  
+  create_dynamic_content_post('rwd_address', 'Address', "This goes in the footer", 'homepage');    
+
 }
+
 
 function get_custom_text($name) {
   $args = array(
@@ -300,11 +303,11 @@ function get_custom_text($name) {
         'value' => $name
       )
     )
-  );
+  );;
 
   $post = new WP_Query($args);
   if($post->have_posts()) {
-    return $post->the_post();
+    return $post;
   } else {
     return "Text couldn't be found. Contact the web admin.";
   }
